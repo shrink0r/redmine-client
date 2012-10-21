@@ -1,6 +1,6 @@
 # Redmine Client 
 
-*Redmine Client* is a php5 library that provides an API and cli-tool for interacting with Redmine.  
+*Redmine Client* is a php5 library that provides an api and cli-tool for interacting with Redmine.  
 Development has just started and the current state of the lib is quite incomplete.  
 
 ## Installation
@@ -44,7 +44,7 @@ Almost all functionality provided by this library is exposed by it's cli.
 For a list of available commands run:
 
 ```sh
-bin/redmine.console list
+bin/redmine-client.console list
 ```
 
 The *help* and the *list* commands are defaults from the underlying symfony console app.  
@@ -54,9 +54,39 @@ simply run the command together with the help option *-h*.
 
 *example for showing the help text of the list-projects command:*
 ```sh
-bin/redmine.console list-projects -h
+bin/redmine-client.console list-projects -h
 ```
 
 ### API
+
+to be done ...
+
+## Development
+
+### Setup
+
+To get started with development first clone this repository:
+
+```sh
+git clone git@github.com:shrink/redmine-client.git
+```
+
+and then setup your working copy along with the required dependencies:
+
+```sh
+make install
+```
+
+Verify that everything is installed ok:
+
+```sh
+make test
+```
+
+### Writing new console commands
+
+to be done ...
+
+### Writing/extending services
 
 to be done ...
