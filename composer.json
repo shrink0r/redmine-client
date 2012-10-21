@@ -1,5 +1,5 @@
 {
-    "name": "shrink0r/redmine-client",
+    "name": "shrink/redmine-client",
     "type": "library",
     "bin": ["bin/redmine.console"],
     "description": "Api and Cli interface for interacting with redmine.",
