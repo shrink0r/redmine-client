@@ -46,7 +46,7 @@ where you put information on the redmine instance you are targetting etc.
 
 *config.ini*
 
-``ìni
+```ini
 [redmine]
 user=clark-kent
 password=look-ma-i-can-haz-fly
