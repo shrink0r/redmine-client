@@ -77,7 +77,7 @@ bin/redmine-client.console list-projects -h
 
 The actually firing the list-projects command with our config looks like this:
 
-``sh
+```sh
 bin/redmine-client.console list-projects config.ini
 ```
 
