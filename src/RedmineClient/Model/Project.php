@@ -1,6 +1,6 @@
 <?php
 
-namespace RedmineClient\Models;
+namespace RedmineClient\Model;
 
 class Project extends BaseModel
 {

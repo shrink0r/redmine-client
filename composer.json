@@ -1,7 +1,7 @@
 {
     "name": "shrink/redmine-client",
     "type": "library",
-    "bin": ["bin/redmine.console"],
+    "bin": ["bin/redmine-client.console", "bin/redmine-client.make"],
     "description": "Api and Cli interface for interacting with redmine.",
     "keywords": ["redmine", "client"],
     "license": "MIT",
@@ -13,7 +13,8 @@
     "minimum-stability": "dev",
     "require": {
         "php": ">=5.3",
-        "symfony/console": "2.1.*"
+        "symfony/console": "2.1.*",
+        "phpunit/phpunit": "3.7.*"
     },
     "autoload": { 
         "psr-0": {"RedmineClient" : "src/" }

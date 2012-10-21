@@ -3,7 +3,7 @@
 namespace RedmineClient\Service;
 
 use RedmineClient\Http\GetRequest;
-use RedmineClient\Models\Project;
+use RedmineClient\Model\Project;
 
 class ProjectService extends BaseService
 {

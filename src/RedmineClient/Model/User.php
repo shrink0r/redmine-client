@@ -1,6 +1,6 @@
 <?php
 
-namespace RedmineClient\Models;
+namespace RedmineClient\Model;
 
 class User extends BaseModel
 {
