@@ -1,6 +1,6 @@
 # Redmine Client 
 
-*Redmine Client * is a small php5 library that provides an API along with a Cli for interacting with Redmine.
+*Redmine Client* is a small php5 library that provides an API along with a Cli for interacting with Redmine.
 
 ## Installation
 
