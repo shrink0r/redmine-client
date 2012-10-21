@@ -1,0 +1,65 @@
+#!/usr/bin/env php
+<?php
+
+use RedmineClient\Console;
+
+use Symfony\Component\Console\Application;
+use Symfony\Component\Console\Output\ConsoleOutput;
+use Symfony\Component\Console\Input\ArgvInput;
+
+$baseDir = dirname(__DIR__);
+// direct checkouts
+if (! is_dir($baseDir . DIRECTORY_SEPARATOR . 'vendor'))
+{
+    $baseDir = dirname(dirname(dirname($baseDir)));
+}
+// installed as a library
+if (! is_dir($baseDir . DIRECTORY_SEPARATOR . 'vendor'))
+{
+    throw new Exception('Unable to locate vendor directory.');
+}
+
+// autoload vendor libs relative to our base directory
+$autoloadPath = array($baseDir, 'vendor', 'autoload.php');
+require_once implode(DIRECTORY_SEPARATOR, $autoloadPath);
+
+$exitCode = 1;
+
+try
+{
+    // create a new symfony console application ..
+    $application = new Application();
+    $application->setAutoExit(FALSE);
+    $application->setCatchExceptions(FALSe);
+    // .. then make our commands available ..
+    $application->add(new Console\ListProjectsCommand);
+    // .. and fire.
+    $exitCode = $application->run();
+}
+catch(\Exception $error)
+{
+    $output = new ConsoleOutput();
+    $input = new ArgvInput();
+    $command = NULL;
+
+    $output->writeln(sprintf('<error>Error: %s</error>', $error->getMessage()));
+
+    try
+    {
+        $command = $application->find($input->getFirstArgument());
+    }
+    catch (\InvalidArgumentException $ex)
+    {
+        $command = NULL;
+    }
+    if ($command)
+    {
+         $output->writeln($command->asText());
+    }
+    else
+    {
+         $output->writeln($application->asText());
+    }
+}
+
+return $exitCode;
