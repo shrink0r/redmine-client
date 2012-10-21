@@ -41,6 +41,24 @@ To verify that *redmine-client* has been correctly installed and is working, run
 ### Command Line Interface
 
 Almost all functionality provided by this library is exposed by it's cli.  
+Before you can start using the cli you need to create a small config file,  
+where you put information on the redmine instance you are targetting etc.
+
+*config.ini*
+
+``ìni
+[redmine]
+user=clark-kent
+password=look-ma-i-can-haz-fly
+baseUrl=https://some.redmine.project.base_url/
+
+[cacheSettings]
+type=memcache
+host=localhost
+port=11211
+```
+
+Now we're ready to get the cli rocking.  
 For a list of available commands run:
 
 ```sh
@@ -55,6 +73,12 @@ simply run the command together with the help option *-h*.
 *example for showing the help text of the list-projects command:*
 ```sh
 bin/redmine-client.console list-projects -h
+```
+
+The actually firing the list-projects command with our config looks like this:
+
+``sh
+bin/redmine-client.console list-projects config.ini
 ```
 
 ### API
