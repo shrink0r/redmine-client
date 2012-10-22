@@ -2,7 +2,7 @@
     "name": "shrink/redmine-client",
     "type": "library",
     "bin": ["bin/redmine-client.console", "bin/redmine-client.make"],
-    "description": "Api and Cli interface for interacting with redmine.",
+    "description": "Php5 api and cli interface for interacting with redmine.",
     "keywords": ["redmine", "client"],
     "license": "MIT",
     "authors": [
