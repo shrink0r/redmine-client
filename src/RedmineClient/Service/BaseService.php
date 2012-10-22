@@ -24,7 +24,7 @@ abstract class BaseService
         return $this->config;
     }
 
-    protected function cachedInvoke(array $callback, array $arguments = array(), $refresh = FALSE)
+    protected function callAgainstCache(array $callback, array $arguments = array(), $refresh = FALSE)
     {
         list($class, $method) = $callback;
         $className = ! is_string($class) ? get_class($class) : $class;

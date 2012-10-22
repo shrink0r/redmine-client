@@ -33,6 +33,7 @@ try
     $application->setCatchExceptions(FALSe);
     // .. then make our commands available ..
     $application->add(new Console\ListProjectsCommand);
+    $application->add(new Console\ListIssuesCommand);
     // .. and fire.
     $exitCode = $application->run();
 }

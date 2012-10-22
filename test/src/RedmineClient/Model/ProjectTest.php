@@ -37,6 +37,7 @@ class ProjectTest extends \PHPUnit_Framework_TestCase
      */
     public static function provideProjectData()
     {
+        // same structure as provided from redmine
         $data = array(
             'identifier' => 'test-project',
             'description' => 'Some text describing our test project.',

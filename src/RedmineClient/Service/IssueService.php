@@ -3,26 +3,26 @@
 namespace RedmineClient\Service;
 
 use RedmineClient\Http\GetRequest;
-use RedmineClient\Model\Project;
+use RedmineClient\Model\Issue;
 
-class ProjectService extends BaseService
+class IssueService extends BaseService
 {
-    const URL_PATH = 'projects.json';
+    const URL_PATH = 'issues.json';
 
     public function getAll()
     {
-        $projects = array();
-        $data = $this->callAgainstCache(array($this, 'fetchProjects'));
+        $issues = array();
+        $data = $this->callAgainstCache(array($this, 'fetchIssues'));
         
-        foreach ($data['projects'] as $projectData)
+        foreach ($data['issues'] as $issueData)
         {
-            $projects[] = Project::create($projectData);
+            $issues[] = Issue::create($issueData);
         }
 
-        return $projects;
+        return $issues;
     }
 
-    protected function fetchProjects()
+    protected function fetchIssues()
     {
         $cfg = $this->getConfig();
 
