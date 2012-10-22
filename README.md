@@ -1,4 +1,4 @@
-# Redmine Client 
+# Redmine Client [![Build Status](https://travis-ci.org/shrink/redmine-client.png)](https://travis-ci.org/shrink/redmine-client)
 
 *Redmine Client* is a php5 library that provides an api and cli-tool for interacting with Redmine.  
 Development has just started and the current state of the lib is quite incomplete.  
