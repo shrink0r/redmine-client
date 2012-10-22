@@ -34,6 +34,7 @@ try
     // .. then make our commands available ..
     $application->add(new Console\ListProjectsCommand);
     $application->add(new Console\ListIssuesCommand);
+    $application->add(new Console\ListUsersCommand);
     // .. and fire.
     $exitCode = $application->run();
 }
