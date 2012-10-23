@@ -2,7 +2,7 @@
 
 namespace RedmineClient\Service;
 
-class ServiceCache extends BaseServiceCache
+class MemcachedCache extends BaseServiceCache
 {
     private $memcache;
 

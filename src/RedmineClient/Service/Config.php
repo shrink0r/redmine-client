@@ -24,7 +24,11 @@ class Config
         $this->authPass = $redmineCfg['password'];
         $this->authUser = $redmineCfg['user'];
         $this->baseUrl = $redmineCfg['baseUrl'];
-        $this->cacheSettings = $config['cacheSettings'];
+        
+        if (isset($config['cacheSettings']))
+        {
+            $this->cacheSettings = $config['cacheSettings'];
+        }
     }
 
     public function getAuthUser()

@@ -12,11 +12,17 @@ abstract class BaseService
     {
         $this->config = $config;
         
-        $cacheSettings = $this->config->getCacheSettings();
-        $this->cache = new ServiceCache(
-            $cacheSettings['host'], 
-            $cacheSettings['port']
-        );
+        if (($cacheSettings = $this->config->getCacheSettings()))
+        {
+            $this->cache = new MemcachedCache(
+                $cacheSettings['host'], 
+                $cacheSettings['port']
+            );
+        }
+        else
+        {
+            $this->cache = new NullCache();
+        }
     }
 
     public function getConfig()
